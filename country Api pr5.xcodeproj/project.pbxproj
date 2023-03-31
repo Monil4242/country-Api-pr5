@@ -15,6 +15,7 @@
 		49D85B3629CE018300554D22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49D85B3429CE018300554D22 /* LaunchScreen.storyboard */; };
 		49D85B3E29CE019100554D22 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D85B3D29CE019100554D22 /* File.swift */; };
 		49D85B4029CE02AB00554D22 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D85B3F29CE02AB00554D22 /* MyTableViewCell.swift */; };
+		8C2D34ED29D402CA00DB141A /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2D34EC29D402CA00DB141A /* ViewController2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		49D85B3729CE018300554D22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49D85B3D29CE019100554D22 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		49D85B3F29CE02AB00554D22 /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
+		8C2D34EC29D402CA00DB141A /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				49D85B2B29CE018200554D22 /* SceneDelegate.swift */,
 				49D85B2D29CE018200554D22 /* ViewController.swift */,
 				49D85B2F29CE018200554D22 /* Main.storyboard */,
+				8C2D34EC29D402CA00DB141A /* ViewController2.swift */,
 				49D85B3F29CE02AB00554D22 /* MyTableViewCell.swift */,
 				49D85B3D29CE019100554D22 /* File.swift */,
 				49D85B3229CE018300554D22 /* Assets.xcassets */,
@@ -149,6 +152,7 @@
 				49D85B2A29CE018200554D22 /* AppDelegate.swift in Sources */,
 				49D85B4029CE02AB00554D22 /* MyTableViewCell.swift in Sources */,
 				49D85B2C29CE018200554D22 /* SceneDelegate.swift in Sources */,
+				8C2D34ED29D402CA00DB141A /* ViewController2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

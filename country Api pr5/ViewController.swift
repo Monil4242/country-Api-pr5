@@ -1,11 +1,14 @@
 import UIKit
 
-class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate{
     
     
     var arr : [WelcomeElement] = []
+    var arr2 : [WelcomeElement] = []
     
     @IBOutlet weak var countryData: UITableView!
+    
+    @IBOutlet weak var searchBar: UISearchBar!
     override func viewDidLoad() {
         super.viewDidLoad()
         getData()
@@ -19,10 +22,11 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             do{
                 if error == nil{
                     self.arr = try JSONDecoder().decode([WelcomeElement].self, from: data!)
+                    self.arr2 = self.arr
                     print(self.arr)
-                                            DispatchQueue.main.async {
-                                                self.countryData.reloadData()
-                                            }
+                    DispatchQueue.main.async {
+                        self.countryData.reloadData()
+                    }
                 }
             }
             catch{
@@ -51,6 +55,36 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         let data = try? Data(contentsOf: url1! as URL)
         return UIImage(data: data!)
     }
+    func stringToImg2(link2 : String) -> UIImage?{
+        let url2 = URL(string: link2)
+        let data2 = try? Data(contentsOf: url2! as URL)
+        return UIImage(data: data2!)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigation(photo: stringToImg(link: arr[indexPath.row].flags.png)!, name1: arr[indexPath.row].name.common, population: arr[indexPath.row].population,image: stringToImg2(link2: arr[indexPath.row].coatOfArms.png!)!)
+        
+    }
+    func navigation(photo:UIImage,name1:String,population:Int,image:UIImage){
+        let navigate = storyboard?.instantiateViewController(withIdentifier: "ViewController2") as! ViewController2
+        navigate.photo = photo
+        navigate.text1 = name1
+        navigate.population = population
+        navigate.photo2 = image
+        navigationController?.pushViewController(navigate, animated: true)
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == ""{
+            arr = arr2
+        }
+        else {
+            arr = arr2.filter({ i in
+                return i.name.common.contains(searchBar.text!)
+            })
+        }
+        countryData.reloadData()
+    }
+    
     
 }
 
